@@ -1,15 +1,15 @@
 package Aplicacion01;
 
 import javax.swing.*;
+import java.lang.Math;
 // import java.lang.Math;
 
 
 public class Aplicacion02 {
     public static void main(String[] args){
         String opcionSelecionada = "";
-        String monedaConvertir = "";
         String[] arregloOpciones = {"DOLARES A COLONES", "COLONES A DOLARES", "DOLARES A EUROS", "EUROS A DOLARES", "SALIR"};
-        double cantidad, conversion, resultado;
+        double cantidad, conversion;
 
         
         while(opcionSelecionada != "SALIR"){
@@ -20,22 +20,22 @@ public class Aplicacion02 {
              //codigo de conversion
              if(opcionSelecionada.equals("DOLARES A COLONES")){
                  cantidad = entrada("$");
-                 conversion = cantidad * 8.75;
+                 conversion = Math.round((cantidad * 8.75));
                  MostrarDatos("$","C", cantidad, conversion);
              }
              else if(opcionSelecionada.equals("COLONES A DOLARES")){
                 cantidad = entrada("C");
-                conversion = cantidad / 8.75;
+                conversion = Math.round((cantidad / 8.75));
                 MostrarDatos("C","$", cantidad, conversion);
             }
              else if(opcionSelecionada.equals("DOLARES A EUROS")){
                 cantidad = entrada("$");
-                conversion = cantidad / 1.18;
+                conversion = Math.round((cantidad / 1.18));
                 MostrarDatos("$","€", cantidad, conversion);
             }
              else if(opcionSelecionada.equals("EUROS A DOLARES")){
                 cantidad = entrada("€");
-                conversion = cantidad * 1.18;
+                conversion = Math.round((cantidad * 1.18));
                 MostrarDatos("€","$", cantidad, conversion);
             }
             else if(opcionSelecionada.equals("SALIR")){
